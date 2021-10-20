@@ -1,0 +1,15 @@
+#profile{
+    text-align: center;
+    padding: 50px;
+  }
+  
+  #profile img{
+    width: 100px;
+  }
+  
+  #profile h1{
+    padding-top: 25px;
+  }
+  #profile p{
+    padding-bottom: 25px;
+  }

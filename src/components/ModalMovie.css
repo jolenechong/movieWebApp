@@ -1,0 +1,155 @@
+.modal {
+    /* Hidden by default */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    overflow: auto; /* Enable scroll if needed */
+    height: 85vh;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    
+  }
+
+  .movieRating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .movieRating p{
+    margin-left: 10px;
+    color: #40cc40;
+  }
+
+  .movieRating p:nth-child(3){
+    width: 125px;
+  }
+
+  .modal img{
+    filter: brightness(50%);
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    height: 60vh;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+
+/* css button */
+#addMovie button[type="submit"]{
+    padding: 8px 16px;
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+
+textarea{
+  width:100%;
+  resize:vertical;
+}
+
+input[type='number'],
+textarea{
+  margin-bottom:10px;
+  border:2px solid transparent;
+  background-color:lightgrey;
+  border-radius:5px;
+  padding:5px;
+}
+input[type='number']:focus, textarea:focus{
+  border:var(--accent-color) solid 2px;
+  outline:none;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  opacity: 0;
+}
+
+.heart-shape{
+  appearance: none;
+  width:16px;
+  height:16px;
+}
+
+input[type='checkbox']{
+  transition:400ms;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: lightgrey;
+}
+.heart-shape:before,
+.heart-shape:after{
+  transition:400ms;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+.heart-shape:before{
+  bottom: 0px;
+  left: -9px;
+}
+.heart-shape:after{
+  top: -9px;
+  right: 0px;
+}
+
+input[type='checkbox']:checked{
+  background-color:rgb(233, 64, 41);
+}
+.checked .heart-shape:after,
+.checked .heart-shape:before{
+  background-color:rgb(233, 64, 41);
+}
+
+#liked{
+  color:rgb(233, 64, 41);
+  font-size:14px;
+  margin-right: 10px;
+}
+
+#favouritesLabel{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

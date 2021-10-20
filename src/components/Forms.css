@@ -1,0 +1,35 @@
+.formContain input[type='text'],
+.formContain input[type='password'],
+.formContain input[type='email']{
+    min-width: 400px;
+    width: 100%;
+    display: block;
+    background-color: #191d24;
+    margin: 10px 0;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 0px;
+    border:1px transparent solid ;
+    color: rgb(192, 192, 192);
+}
+.formContain input[type='text']:focus,
+.formContain input[type='password']:focus,
+.formContain input[type='email']:focus{
+    border:1px var(--accent-color) solid;
+    outline: 0;
+}
+
+.formContain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+
+.formContain button[type='submit']{
+    padding: 10px;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: none;
+}
