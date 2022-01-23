@@ -27,8 +27,8 @@
 .movie-info{
     margin-top: -5px;
     padding: 10px;
-    background-color: var(--accent-color);
-    position: relative;
+    /* background-color: var(--accent-color); */
+    /* position: relative; */
     min-height: 75px;
 }
 
@@ -51,23 +51,31 @@
     font-size: 14px;
 }
 
-.overview-title h3{
-    display: inline-block;
-    margin-right: 75px;
-}
-
-.overview-title i{
-    font-size: 16px;
-    margin-left: 5px;
-}
-.movie-overlay a{
-    color:white;
-    font-size: 1rem;;
-}
-
 @media screen and (max-width: 960px) {
     .movie-wrapper:hover .movie{
         transform: scale(1);
         z-index: 1000;
     }
+}
+
+#no-change-link{
+    text-decoration: none;
+    color: white;
+}
+
+.genres{
+    display: inline-block;
+    background-color: var(--tags-bg);
+    border: #b4b4b4 1px solid;
+    border-radius: 20px;
+    padding: 4px;
+    margin: 2px;
+    font-size: 0.8rem;
+}
+
+.movie-details{
+    padding: 0 10px 10px 10px;
+}
+.movie-details p{
+    color: #9A9A9A;
 }

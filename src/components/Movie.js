@@ -33,29 +33,26 @@ const Movie = ({
   return (
       <>
     <div className="movie-wrapper">
-      <div className="movie">
+    <Link to={`/add?title=${title}`} id="no-change-link">
+    <div className="movie">
         {backdrop_path ? <img src={getIMG} alt={title}/> : <img src={placeholder} alt='' style={{height:'174px'}}/>}
-        {/* <img src={getIMG} alt={title}/> */}
         <div className="movie-info">
           <h1>{title}</h1>
-          {/* <p>{genre_ids[0]}, {genre_ids[1]}</p> */}
           {genres.map((e) => (
-            <span>{e.name + " "}</span>
+            <span className="genres">{e.name + " "}</span>
           ))}
-          <p style={{ position: "absolute", top: "30%", right: "20px" }}>
+          <p style={{ position: "absolute", top: "10px", right: "20px",fontSize:"0.8rem",background:"var(--accent-color)",borderRadius:"20px",padding:"5px" }}>
             {vote_average}
           </p>
+          
         </div>
-        <div className="movie-overlay">
-          <div className="overview-title">
-            <h3>Overview</h3>
-            {/* <i className="fas fa-check"></i>
-            <i className="far fa-heart"></i> */}
-          </div>
-          <p className="text-wrap">{overview}</p>
-          <Link to={`/add?title=${title}`}>Read More</Link>
+        <div className="movie-details">
+        <p className="text-wrap">{overview}</p>
         </div>
-      </div>
+      </div>            
+            
+      </Link>
+      
     </div>
     </>
   );

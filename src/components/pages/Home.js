@@ -41,7 +41,7 @@ function Home() {
       CHOSEN_API = SEARCH_API + searchTerm
 
       setSearchTerm("");
-      document.getElementById("headerTxt").innerHTML = "Results";
+      // document.getElementById("headerTxt").innerHTML = "Results";
     }
   };
 
@@ -63,7 +63,7 @@ function Home() {
 
     CHOSEN_API = SEARCH_BY_GENRE_API + value
     setSearchByGenre("");
-    document.getElementById("headerTxt").innerHTML = "Results";
+    // document.getElementById("headerTxt").innerHTML = "Results";
   };
 
   // pagination, only increments for featured shows
@@ -95,10 +95,17 @@ function Home() {
     }
   }
 
+  const IMG_API = "https://image.tmdb.org/t/p//w1280";
+
   return (
     <>
       <section id="headerIMG">
-        <img src="https://i.ibb.co/KKzvgWJ/don-t-breathe-2-et00312665-16-07-2021-04-54-06.jpg" />
+          {movies.length > 0 ? (
+            <img src={IMG_API +movies[0].backdrop_path}/>
+          ) : (
+            <img src="https://i.ibb.co/KKzvgWJ/don-t-breathe-2-et00312665-16-07-2021-04-54-06.jpg" />
+          )}
+        {/* {<img src={IMG_API +movies[0].backdrop_path}/> && <img src="https://i.ibb.co/KKzvgWJ/don-t-breathe-2-et00312665-16-07-2021-04-54-06.jpg" />} */}
         <section id="filterSection">
         <form onSubmit={handleOnSubmit} id="search">
           <i className="fas fa-search"></i>
@@ -110,7 +117,13 @@ function Home() {
             onChange={handleOnChange}
           />
         </form>
-        <form id="genreFilter">
+      </section>
+
+      </section>
+
+      
+      <section id="mainSection">
+      <form id="genreFilter">
           <i className="fas fa-filter"></i>
           <select id="genres" name="genreList" onChange={searchGenre}>
             <option disabled>Filter By Genre...</option>
@@ -135,17 +148,10 @@ function Home() {
             <option value="37">Western</option>
           </select>
         </form>
-      </section>
-
-      </section>
-
-      {/* <i class="fas fa-heart"></i> */}
-
-      
-      <section id="mainSection">
-        <h1 id="headerTxt" style={{ textAlign:'center', padding:'10px'}}>
+        {/* <h1 id="headerTxt" style={{ textAlign:'center', padding:'10px 20px 10px 10px'}}>
           Featured Shows
-        </h1>
+        </h1> */}
+
         <div className="movie-container">
           {movies.length > 0 ? (
             movies.map((movie) => <Movie key={movie.id} {...movie} />)
@@ -167,9 +173,9 @@ function Home() {
         </div>
       </section>
 
-      <section id="favourites">
+      {/* <section id="favourites">
         <h1 style={{ padding: "20px" }}>My Favourites</h1>
-      </section>
+      </section> */}
     </>
   );
 }

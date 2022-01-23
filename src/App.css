@@ -18,15 +18,16 @@ body{
   /* --accent-color: rgb(115, 38, 38); */
   /* --accent-color: rgb(54, 132, 199); */
   --accent-color:rgb(83, 179, 147);
-  --main-color: #222831;
+  --main-color: #1D1D1D;
+  --tags-bg:#555555;
 }
 
 /* start of navbar css */
 nav{
   position: fixed;
   z-index: 10000;
-  background-image: linear-gradient(black, transparent);
   width: 100%;
+  background-color: #393939;
 }
 nav a{
   color: white;
@@ -38,7 +39,7 @@ nav a{
   height: 60px;
 }
 .nav-menu a{
-  padding: 12px 8px;
+  padding: 5px 8px;
   display: inline-block;
 }
 
@@ -95,28 +96,29 @@ input[type='color']{
 
 /* start of filter section css */
 #filterSection{
-  height: 60px;
-  display: flex;
+  position: fixed;
   align-items: center;
-  position: absolute;
-  top: 325px;
+  top: 30px;
+  z-index: 1000000;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 input[type='text']{
-  border: var(--main-color) 1px solid;
+  border-bottom: #b4b4b4 1px solid;
   outline: 0;
-  border-radius: 20px;
   padding: 10px;
-  width: 100%;
+  width: 300px;
   padding-left: 30px;
-  background-color: #191d24;
+  background-color: transparent;
   color: rgb(192, 192, 192);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
 }
 
 input[type='text']:focus{
-  border: var(--accent-color) 1px solid;
+  border-bottom: var(--accent-color) 1px solid;
 }
 
 #search{
@@ -137,9 +139,7 @@ select{
   outline: 0;
   border-radius: 20px;
   padding: 10px;
-  width: 250px;
   padding-left: 30px;
-  /* padding-right: 10px; */
 }
 
 select:focus{
@@ -150,11 +150,17 @@ select:focus{
 #filterSection{
   flex-direction: column;
 }
+/* input[type="text"]{
+  width: 95%;
+  padding: 10px;
+} */
 }
 
-#genreFilter{
-  position: relative;
-}
+@media screen and (max-width: 450px) {
+  input[type="text"]{
+    width: 95%;
+  }
+  }
 
 #genreFilter i{
   position: absolute;
@@ -196,3 +202,14 @@ footer{
   font-size: 1.2rem;
   margin: 10px;
 }
+
+#headerTxt{
+  float: left;
+  width: 50%;
+}
+
+#genreFilter{
+  padding: 10px 20px 10px 10px;
+  text-align: center;
+}
+
