@@ -1,7 +1,7 @@
 # Movie WebApp
-Keep track of the movies you watched and the ones you like. Full-stack Movie WebApp built with ReactJS
+Full-stack Movie WebApp built with ReactJS. Did this awhile ago but forgot about it, so i recently went back and redesigned it!
 <br><br>
-Date: October 2021 <br>
+Date: January 2022 <br>
 Source Code: https://github.com/jolenechong/movieWebApp <br>
 
 ## Usage
