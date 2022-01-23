@@ -132,7 +132,7 @@ input[type='text']:focus{
   color: rgb(85, 85, 85);
 }
 
-select{
+/* select{
   color: rgb(192, 192, 192);
   background-color: #191d24;
   border: var(--main-color) 1px solid;
@@ -144,6 +144,25 @@ select{
 
 select:focus{
   border: var(--accent-color) 1px solid;
+} */
+
+#cat-window{
+  overflow-x: scroll;
+  width: 90%;
+  margin: auto;
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.genres label{
+  cursor: pointer;
+
 }
 
 @media screen and (max-width: 960px) {
@@ -211,5 +230,6 @@ footer{
 #genreFilter{
   padding: 10px 20px 10px 10px;
   text-align: center;
+  width: 1180px;
 }
 

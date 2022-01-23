@@ -33,7 +33,7 @@ const Movie = ({
   return (
       <>
     <div className="movie-wrapper">
-    <Link to={`/add?title=${title}`} id="no-change-link">
+    <Link to={`/movie?title=${title}`} id="no-change-link">
     <div className="movie">
         {backdrop_path ? <img src={getIMG} alt={title}/> : <img src={placeholder} alt='' style={{height:'174px'}}/>}
         <div className="movie-info">

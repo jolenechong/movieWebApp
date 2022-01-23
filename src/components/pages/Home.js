@@ -50,19 +50,21 @@ function Home() {
   };
 
   const searchGenre = (e) => {
-    e.preventDefault();
-
-    var select = document.getElementById("genres");
-    var value = select.options[select.selectedIndex].value;
+    var value = document.querySelector('input[name="genre"]:checked').value;
+    console.log(value);
+    
     fetch(SEARCH_BY_GENRE_API + value)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-        setPage(data.page);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      setMovies(data.results);
+      setPage(data.page);
+      console.log(data.results)
+    });
 
     CHOSEN_API = SEARCH_BY_GENRE_API + value
+    console.log(CHOSEN_API)
     setSearchByGenre("");
+    // console.log('switch');
     // document.getElementById("headerTxt").innerHTML = "Results";
   };
 
@@ -120,38 +122,95 @@ function Home() {
       </section>
 
       </section>
-
       
       <section id="mainSection">
-      <form id="genreFilter">
-          <i className="fas fa-filter"></i>
-          <select id="genres" name="genreList" onChange={searchGenre}>
-            <option disabled>Filter By Genre...</option>
-            <option value="28">Action</option>
-            <option value="12">Advenure</option>
-            <option value="16">Animation</option>
-            <option value="35">Comedy</option>
-            <option value="80">Crime</option>
-            <option value="99">Documentary</option>
-            <option value="18">Drama</option>
-            <option value="10751">Family</option>
-            <option value="14">Fantasy</option>
-            <option value="36">History</option>
-            <option value="27">Horror</option>
-            <option value="10402">Music</option>
-            <option value="9648">Mystery</option>
-            <option value="10749">Romance</option>
-            <option value="878">Science Fiction</option>
-            <option value="107770">TV Movie</option>
+        <div id="cat-window">
+      <form id="genreFilter" onChange={searchGenre}>
+
+            {/* 
             <option value="53">Thriller</option>
             <option value="10752">War</option>
             <option value="37">Western</option>
-          </select>
+          </radio>  */}
+         <div className="genres">
+          <input type="radio" id="action" name="genre" value="28"/>
+          <label for="action">Action</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="adventure" name="genre" value="12"/>
+          <label for="adventure">Adventure</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="animation" name="genre" value="16"/>
+          <label for="animation">Animation</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="comedy" name="genre" value="35"/>
+          <label for="comedy">Comedy</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="crime" name="genre" value="80"/>
+          <label for="crime">Crime</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="documentary" name="genre" value="99"/>
+          <label for="documentary">Documentary</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="drama" name="genre" value="18"/>
+          <label for="drama">Drama</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="family" name="genre" value="10751"/>
+          <label for="family">Family</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="fantasy" name="genre" value="14"/>
+          <label for="fantasy">Fantasy</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="history" name="genre" value="36"/>
+          <label for="history">History</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="history" name="genre" value="27"/>
+          <label for="horror">Horror</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="history" name="genre" value="10402"/>
+          <label for="music">Music</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="history" name="genre" value="9648"/>
+          <label for="mystery">Mystery</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="romance" name="genre" value="10749"/>
+          <label for="romance">Romance</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="scifi" name="genre" value="878"/>
+          <label for="scifi">Science Fiction</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="tvmovie" name="genre" value="107770"/>
+          <label for="tvmovie">TV Movies</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="thriller" name="genre" value="53"/>
+          <label for="thriller">Thriller</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="war" name="genre" value="10752"/>
+          <label for="war">War</label>
+         </div>
+         <div className="genres">
+          <input type="radio" id="western" name="genre" value="37"/>
+          <label for="western">Western</label>
+         </div>
         </form>
-        {/* <h1 id="headerTxt" style={{ textAlign:'center', padding:'10px 20px 10px 10px'}}>
-          Featured Shows
-        </h1> */}
-
+        </div>
+        
         <div className="movie-container">
           {movies.length > 0 ? (
             movies.map((movie) => <Movie key={movie.id} {...movie} />)
@@ -172,10 +231,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* <section id="favourites">
-        <h1 style={{ padding: "20px" }}>My Favourites</h1>
-      </section> */}
     </>
   );
 }
